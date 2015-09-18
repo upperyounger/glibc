@@ -81,14 +81,15 @@ __pthread_timedjoin_ex (pthread_t threadid, void **thread_return,
 	 un-wait-ed for again.  */
       pthread_cleanup_push (cleanup, &pd->joinid);
 
-      int oldtype = CANCEL_ASYNC ();
+      int ct;
+      __pthread_setcanceltype (PTHREAD_CANCEL_ASYNCHRONOUS, &ct);
 
       if (abstime != NULL)
 	result = lll_timedwait_tid (pd->tid, abstime);
       else
 	lll_wait_tid (pd->tid);
 
-      CANCEL_RESET (oldtype);
+      __pthread_setcanceltype (ct, NULL);
 
       pthread_cleanup_pop (0);
     }
