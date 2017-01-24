@@ -51,13 +51,10 @@ __pthread_timedjoin_ex (pthread_t threadid, void **thread_return,
 
   LIBC_PROBE (pthread_join, 1, threadid);
 
-  if ((pd == self
-       || (self->joinid == pd
-	   && (pd->cancelhandling
-	       & (CANCELING_BITMASK | CANCELED_BITMASK | EXITING_BITMASK
-		  | TERMINATED_BITMASK)) == 0))
+  unsigned int ch = atomic_load_relaxed (&pd->cancelhandling);
+  if ((pd == self || (self->joinid == pd && ch == 0))
       && !(self->cancelstate == PTHREAD_CANCEL_ENABLE
-           && self->cancelhandling & CANCELED_BITMASK))
+           && ch & THREAD_CANCELED))
     /* This is a deadlock situation.  The threads are waiting for each
        other to finish.  Note that this is a "may" error.  To be 100%
        sure we catch this error we would have to lock the data
