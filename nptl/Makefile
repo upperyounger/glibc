@@ -143,7 +143,8 @@ libpthread-routines = nptl-init vars events version pt-interp \
 		      thrd_create thrd_current thrd_detach thrd_equal \
 		      thrd_exit thrd_join thrd_sleep thrd_yield \
 		      mtx_destroy mtx_init mtx_lock mtx_timedlock \
-		      mtx_trylock mtx_unlock call_once
+		      mtx_trylock mtx_unlock call_once cnd_broadcast \
+		      cnd_destroy cnd_init cnd_signal cnd_timedwait cnd_wait
 #		      pthread_setuid pthread_seteuid pthread_setreuid \
 #		      pthread_setresuid \
 #		      pthread_setgid pthread_setegid pthread_setregid \
