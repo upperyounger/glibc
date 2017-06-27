@@ -1,5 +1,38 @@
 2018-02-02  Adhemerval Zanella  <adhemerval.zanella@linaro.org>
 
+	* sysdeps/unix/sysv/linux/aarch64/libpthread.abilist: Add C11 thread
+	symbols.
+	* sysdeps/unix/sysv/linux/alpha/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/arm/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/hppa/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/i386/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/ia64/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/m68k/m680x0/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/m68k/coldfire/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/microblaze/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/mips/mips32/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/mips/mips64/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/nios2/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/powerpc/powerpc32/libpthread.abilist:
+	Likewise.
+	* sysdeps/unix/sysv/linux/powerpc/powerpc64/libpthread-le.abilist:
+	Likewise.
+	* sysdeps/unix/sysv/linux/powerpc/powerpc64/libpthread.abilist:
+	Likewise.
+	* sysdeps/unix/sysv/linux/riscv/rv64/libpthread.abilist: Likewise.
+	* sysdpes/unix/sysv/linux/s390/s390-32/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/s390/s390-64/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/sh/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/sparc/sparc32/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/sparc/sparc64/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/tile/tilegx/tilegx32/libpthread.abilist:
+	Likewise.
+	* sysdeps/unix/sysv/linux/tile/tilegx/tilegx64/libpthread.abilist:
+	Likewise.
+	* sysdeps/unix/sysv/linux/tile/tilepro/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/x86_64/64/libpthread.abilist: Likewise.
+	* sysdeps/unix/sysv/linux/x86_64/x32/libpthread.abilist: Likewise.
+
 	* conform/data/threads.h-data (thread_local): New macro.
 	(TSS_DTOR_ITERATIONS): Likewise.
 	(tss_t): New type.
