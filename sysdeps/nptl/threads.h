@@ -27,8 +27,11 @@ __BEGIN_DECLS
 #include <bits/pthreadtypes-arch.h>
 #include <bits/types/struct_timespec.h>
 
+#define ONCE_FLAG_INIT 0
+
 typedef unsigned long int thrd_t;
 typedef int (*thrd_start_t) (void*);
+typedef int __ONCE_ALIGNMENT once_flag;
 
 /* Exit and error codes.  */
 enum
@@ -128,6 +131,11 @@ extern int mtx_unlock (mtx_t *__mutex);
 
 /* Destroy the mutex object pointed by __MUTEX.  */
 extern void mtx_destroy (mtx_t *__mutex);
+
+
+/* Call function __FUNC exactly once, even if invoked from several threads.
+   All calls must be made with the same __FLAGS object.  */
+extern void call_once (once_flag *__flag, void (*__func)(void));
 
 __END_DECLS
 
