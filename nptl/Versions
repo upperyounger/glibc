@@ -265,6 +265,12 @@ libpthread {
   GLIBC_2.22 {
   }
 
+  # C11 thread symbols.
+  GLIBC_2.28 {
+    thrd_create; thrd_current; thrd_detach; thrd_equal; thrd_exit; thrd_join;
+    thrd_sleep; thrd_yield;
+  }
+
   GLIBC_PRIVATE {
     __pthread_initialize_minimal;
     __pthread_clock_gettime; __pthread_clock_settime;

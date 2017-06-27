@@ -22,7 +22,7 @@ subdir	:= nptl
 
 include ../Makeconfig
 
-headers := pthread.h semaphore.h bits/semaphore.h
+headers := pthread.h semaphore.h bits/semaphore.h threads.h
 
 extra-libs := libpthread
 extra-libs-others := $(extra-libs)
@@ -139,7 +139,9 @@ libpthread-routines = nptl-init vars events version pt-interp \
 		      pthread_mutex_getprioceiling \
 		      pthread_mutex_setprioceiling \
 		      pthread_setname pthread_getname \
-		      pthread_setattr_default_np pthread_getattr_default_np
+		      pthread_setattr_default_np pthread_getattr_default_np \
+		      thrd_create thrd_current thrd_detach thrd_equal \
+		      thrd_exit thrd_join thrd_sleep thrd_yield
 #		      pthread_setuid pthread_seteuid pthread_setreuid \
 #		      pthread_setresuid \
 #		      pthread_setgid pthread_setegid pthread_setregid \

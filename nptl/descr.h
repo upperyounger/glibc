@@ -371,6 +371,8 @@ struct pthread
      to the function.  */
   void *(*start_routine) (void *);
   void *arg;
+  /* Indicates whether is a C11 thread created by thrd_creat.  */
+  bool c11;
 
   /* Debug state.  */
   td_eventbuf_t eventbuf;
