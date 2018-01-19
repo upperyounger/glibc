@@ -18,6 +18,7 @@
 #include <libc-lock.h>
 #include <errno.h>
 #include <stdlib.h>
+#include <cthreads.h>
 
 char __libc_lock_self0[0];
 
@@ -48,14 +49,4 @@ cthread_setspecific (cthread_key_t key, void *val)
 {
   __set_errno (ENOSYS);
   return -1;
-}
-
-/* Call cthread_getspecific which gets a pointer to the return value instead
-   of just returning it.  */
-void *
-__libc_getspecific (cthread_key_t key)
-{
-  void *val;
-  cthread_getspecific (key, &val);
-  return val;
 }
